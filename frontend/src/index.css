@@ -276,7 +276,7 @@ body {
     }
 
     .card {
-        background: transparent;
+        background: white;
         box-shadow: none;
         border-radius: 0;
     }

@@ -32,6 +32,18 @@ class ItemsService {
 
     async getItems({ limit, page, q = '' }) {
         let data = await this.dataRepository.readData();
+
+        // Sort: Put elements with timestamp-like IDs first, sorted descending by time.
+        data.sort((a, b) => {
+            const isATimestamp = typeof a.id === 'number' && a.id > 1000000000000;
+            const isBTimestamp = typeof b.id === 'number' && b.id > 1000000000000;
+
+            if (isATimestamp && !isBTimestamp) return -1;
+            if (!isATimestamp && isBTimestamp) return 1;
+            if (isATimestamp && isBTimestamp) return b.id - a.id;
+            return a.id - b.id;
+        });
+
         const searchQuery = q.toLowerCase();
         // Checking if q string is not emptystring
         if (searchQuery.length > 0) {
