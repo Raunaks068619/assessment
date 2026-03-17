@@ -43,10 +43,36 @@ export function DataProvider({ children }) {
     }
   }, []);
 
+  const addItem = async (newItem) => {
+    try {
+      const res = await fetch('http://localhost:4001/api/items', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
+        body: JSON.stringify(newItem)
+      });
+
+      if (!res.ok) {
+        throw new Error('Failed to create item');
+      }
+
+      // Re-fetch items and stats after a successful create
+      fetchItems();
+      fetchStats();
+
+      return await res.json();
+    } catch (err) {
+      console.error('Error adding item:', err);
+      throw err;
+    }
+  };
+
   return (
     <DataContext.Provider value={{
       items, fetchItems, pagination, setLimit, setPage, setQ, page,
-      stats, fetchStats
+      stats, fetchStats, addItem
     }}>
       {children}
     </DataContext.Provider>
