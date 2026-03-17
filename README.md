@@ -76,6 +76,7 @@ Once completed, submit one of the following:
 
 - **short video** recording your work.
 - Explaination Video : https://www.loom.com/share/bd41bd37181549dcb9aada7144834a92
+- Demo for API / UI : https://www.loom.com/share/264826a87b9c40019691c07da2c084ea
 - **Github Link** where your assessment result were pushed.
 
 ---
