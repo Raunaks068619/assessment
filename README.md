@@ -4,6 +4,8 @@
 Welcome, candidate! This project contains **intentional issues** that mimic real‑world scenarios.
 Your task is to refactor, optimize, and fix these problems.
 
+<img width="1512" height="861" alt="Screenshot 2026-03-18 at 4 13 57 AM" src="https://github.com/user-attachments/assets/d7390404-f67b-4fbe-aab5-3acb8e6b7a30" />
+
 ## Objectives
 
 ### 💻 Frontend (React)
@@ -73,6 +75,7 @@ Your task is to refactor, optimize, and fix these problems.
 Once completed, submit one of the following:
 
 - **short video** recording your work.
+- Explaination Video : https://www.loom.com/share/bd41bd37181549dcb9aada7144834a92
 - **Github Link** where your assessment result were pushed.
 
 ---
